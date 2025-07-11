@@ -1,0 +1,58 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tree trunk -->
+  <rect x="90" y="120" width="20" height="50" fill="#8B4513" rx="2"/>
+  
+  <!-- Roots -->
+  <path d="M85 170 Q70 180 60 185 M100 170 Q115 180 125 185 M100 170 Q100 185 95 190 M100 170 Q85 185 75 190 M100 170 Q115 185 125 190" 
+        stroke="#8B4513" stroke-width="3" fill="none" opacity="0.8"/>
+  
+  <!-- Main tree circle -->
+  <circle cx="100" cy="100" r="45" fill="#228B22" opacity="0.3"/>
+  
+  <!-- Colorful leaves in rainbow pattern -->
+  <!-- Purple leaves -->
+  <circle cx="70" cy="80" r="8" fill="#9932CC"/>
+  <circle cx="75" cy="90" r="6" fill="#8A2BE2"/>
+  <circle cx="65" cy="95" r="7" fill="#9370DB"/>
+  
+  <!-- Blue leaves -->
+  <circle cx="85" cy="70" r="7" fill="#4169E1"/>
+  <circle cx="90" cy="75" r="8" fill="#1E90FF"/>
+  <circle cx="80" cy="85" r="6" fill="#00BFFF"/>
+  
+  <!-- Green leaves -->
+  <circle cx="100" cy="65" r="9" fill="#32CD32"/>
+  <circle cx="105" cy="70" r="7" fill="#00FF32"/>
+  <circle cx="95" cy="75" r="6" fill="#90EE90"/>
+  
+  <!-- Yellow leaves -->
+  <circle cx="115" cy="70" r="8" fill="#FFD700"/>
+  <circle cx="120" cy="75" r="6" fill="#FFFF00"/>
+  <circle cx="110" cy="80" r="7" fill="#FFF8DC"/>
+  
+  <!-- Orange leaves -->
+  <circle cx="125" cy="85" r="7" fill="#FF8C00"/>
+  <circle cx="130" cy="90" r="8" fill="#FF6347"/>
+  <circle cx="120" cy="95" r="6" fill="#FFA500"/>
+  
+  <!-- Red leaves -->
+  <circle cx="130" cy="100" r="7" fill="#FF0000"/>
+  <circle cx="125" cy="105" r="6" fill="#DC143C"/>
+  <circle cx="120" cy="110" r="8" fill="#B22222"/>
+  
+  <!-- Additional scattered leaves for fullness -->
+  <circle cx="85" cy="95" r="5" fill="#9932CC"/>
+  <circle cx="95" cy="85" r="4" fill="#1E90FF"/>
+  <circle cx="105" cy="90" r="5" fill="#32CD32"/>
+  <circle cx="115" cy="85" r="4" fill="#FFD700"/>
+  <circle cx="110" cy="95" r="5" fill="#FF8C00"/>
+  <circle cx="100" cy="100" r="6" fill="#FF0000"/>
+  
+  <!-- More leaves for density -->
+  <circle cx="78" cy="105" r="4" fill="#8A2BE2"/>
+  <circle cx="88" cy="110" r="5" fill="#4169E1"/>
+  <circle cx="98" cy="115" r="4" fill="#32CD32"/>
+  <circle cx="108" cy="110" r="5" fill="#FFD700"/>
+  <circle cx="118" cy="105" r="4" fill="#FF8C00"/>
+  <circle cx="110" cy="115" r="5" fill="#DC143C"/>
+</svg>
