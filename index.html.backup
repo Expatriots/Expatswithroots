@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expats with Roots - Building Tech Communities</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-tree"></i>
+                    <span>Expats with Roots</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#join" class="cta-button">Join Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Building Bridges, Growing <span class="highlight">Roots</span></h1>
+                    <p class="hero-subtitle">Connecting expats in tech fields to build a thriving community of expertise, collaboration, and shared growth opportunities.</p>
+                    <div class="hero-buttons">
+                        <a href="#join" class="btn btn-primary">Join Our Community</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-icons">
+                        <i class="fab fa-react"></i>
+                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-paint-brush"></i>
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About <span class="highlight">Expats with Roots</span></h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community Building</h3>
+                        <p>We bring together expats from diverse tech backgrounds to create a supportive network that understands the unique challenges and opportunities of working abroad.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Collaboration</h3>
+                        <p>Connect with Egyptian companies seeking consultations and collaboration opportunities while building meaningful professional relationships.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Growth Together</h3>
+                        <p>Share expertise, learn from each other, and grow both personally and professionally in our inclusive tech community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="community">
+            <div class="container">
+                <h2>Our Tech <span class="highlight">Community</span></h2>
+                <p class="section-subtitle">We welcome professionals from all areas of technology</p>
+                <div class="tech-fields">
+                    <div class="tech-field">
+                        <i class="fas fa-code"></i>
+                        <span>Software Development</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-brain"></i>
+                        <span>AI & Machine Learning</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Cyber Security</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Data Analytics</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-tasks"></i>
+                        <span>Product Management</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>UX/UI Design</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud Computing</span>
+                    </div>
+                    <div class="tech-field">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Networking & Infrastructure</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="join">
+            <div class="container">
+                <div class="join-content">
+                    <h2>Ready to Join <span class="highlight">Expats with Roots</span>?</h2>
+                    <p>Help us build this community by sharing your expertise and connecting with fellow expats. Your journey starts here.</p>
+                    <div class="join-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Connect with like-minded professionals</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Access collaboration opportunities</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Share and expand your expertise</span>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJvTwDU5c8yVKhldkOGsbe_ukoolw7G2l-eWMrkjACRoy96g/viewform?usp=header" 
+                       target="_blank" 
+                       class="btn btn-primary btn-large">
+                        <i class="fas fa-user-plus"></i>
+                        Join Our Community
+                    </a>
+                    <p class="privacy-note">
+                        <i class="fas fa-lock"></i>
+                        Your information is secure and will only be used for community activities
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-tree"></i>
+                    <span>Expats with Roots</span>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:expatswithroots@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        expatswithroots@gmail.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Expats with Roots. Building connections, growing together.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
