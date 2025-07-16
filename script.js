@@ -1,13 +1,29 @@
 // Back to top button functionality
 document.addEventListener('DOMContentLoaded', function() {
     const backToTopButton = document.getElementById('back-to-top');
+    const stickyJoinButton = document.getElementById('sticky-join');
     
-    // Show button when user scrolls down 300px
+    // Show buttons when user scrolls down
     window.addEventListener('scroll', function() {
+        // Handle back to top button
         if (window.scrollY > 300) {
             backToTopButton.classList.add('show');
         } else {
             backToTopButton.classList.remove('show');
+        }
+        
+        // Handle sticky join button
+        // Show after scrolling past the join section
+        const joinSection = document.getElementById('join');
+        const joinSectionTop = joinSection.getBoundingClientRect().top + window.pageYOffset;
+        const viewportHeight = window.innerHeight;
+        
+        if (window.scrollY > 300 && 
+            (window.scrollY < joinSectionTop - viewportHeight || 
+             window.scrollY > joinSectionTop + joinSection.offsetHeight)) {
+            stickyJoinButton.classList.add('show');
+        } else {
+            stickyJoinButton.classList.remove('show');
         }
     });
     
