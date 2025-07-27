@@ -818,7 +818,7 @@ body {
 .join-stats {
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 5rem;
     margin-top: 3rem;
     flex-wrap: wrap;
 }
@@ -902,6 +902,7 @@ body {
         flex-direction: column;
         gap: 2rem;
         margin: 2rem auto;
+        align-items: center;
     }
     
     .stat {
@@ -1031,7 +1032,7 @@ body {
 .footer-links .social-link {
     display: inline-flex;
     align-items: center;
-    background-color: #1877f2;
+    background-color: #25D366;
     border-radius: 20px;
     padding: 8px 15px;
     margin-top: 10px;
@@ -1039,9 +1040,9 @@ body {
 }
 
 .footer-links .social-link:hover {
-    background-color: #166fe5;
+    background-color: #128C7E;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
 }
 
 .footer-links .social-link i {
