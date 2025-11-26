@@ -28,8 +28,8 @@ body {
     --brown: #8B4513;
     --dark-green: #228B22;
     
-    /* Egyptian color palette */
-    --egyptian-blue: #0033A0;
+    /* Egyptian color palette - Updated to match logo branding */
+    --egyptian-blue: #000080; /* Navy blue from logo */
     --egyptian-gold: #D4AF37;
     --egyptian-teal: #008080;
     --egyptian-sand: #C2B280;
@@ -80,7 +80,7 @@ body {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--dark-green);
+    color: var(--egyptian-blue);
 }
 
 .logo-icon {
@@ -95,6 +95,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo-icon img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .nav-menu {
@@ -115,7 +121,7 @@ body {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #B38728, #0033A0);
+    background: linear-gradient(135deg, #B38728, #000080);
     color: white !important;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
@@ -133,7 +139,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #B38728, #0033A0);
+    background: linear-gradient(135deg, #B38728, #000080);
     border-radius: 25px;
     opacity: 0;
     z-index: -1;
@@ -178,7 +184,7 @@ body {
 /* Hero Section */
 .hero {
     min-height: 85vh;
-    background: linear-gradient(135deg, #0F172A 0%, #0033A0 50%, #0F172A 100%);
+    background: linear-gradient(135deg, #0F172A 0%, #000080 50%, #0F172A 100%);
     display: flex;
     align-items: center;
     position: relative;
@@ -310,6 +316,7 @@ body {
     height: 300px;
     object-fit: contain;
     animation: gentle-float 4s ease-in-out infinite;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 128, 0.3));
 }
 
 @keyframes gentle-float {
@@ -349,9 +356,9 @@ body {
 .orange { background: linear-gradient(135deg, var(--orange), #FF6347); }
 .red { background: linear-gradient(135deg, var(--red), #B22222); }
 
-/* Egyptian-inspired color gradients */
+/* Egyptian-inspired color gradients - Updated to match logo branding */
 .egyptian-gold { background: linear-gradient(135deg, var(--egyptian-gold), #B8860B); }
-.egyptian-blue { background: linear-gradient(135deg, var(--egyptian-blue), #00008B); }
+.egyptian-blue { background: linear-gradient(135deg, var(--egyptian-blue), #000050); }
 .egyptian-teal { background: linear-gradient(135deg, var(--egyptian-teal), #006666); }
 .egyptian-sand { background: linear-gradient(135deg, var(--egyptian-sand), #A89968); }
 .egyptian-red { background: linear-gradient(135deg, var(--egyptian-red), #8B0000); }
@@ -682,7 +689,7 @@ body {
     border-left: 3px solid var(--egyptian-blue);
     padding: 0.7rem 1rem;
     margin: 1rem 0;
-    background-color: rgba(0, 51, 160, 0.05);
+    background-color: rgba(0, 0, 128, 0.05);
     line-height: 1.6;
 }
 
@@ -1010,8 +1017,16 @@ body {
 }
 
 .footer-logo .logo-icon {
-    width: 30px;
-    height: 30px;
+    width: 200px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo .logo-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .footer-links {
@@ -1467,7 +1482,7 @@ section {
     margin: 1.5rem 0 2rem;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
-    background-color: rgba(0, 51, 160, 0.2);
+    background-color: rgba(0, 0, 128, 0.2);
     border-left: 4px solid var(--egyptian-gold);
 }
 
