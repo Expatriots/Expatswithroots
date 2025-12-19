@@ -13,16 +13,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Handle sticky join button
-        // Show after scrolling past the join section
+        // Hide when user navigates to "For Companies" section, show only when above "Join the Movement" section
+        const companiesSection = document.getElementById('companies');
         const joinSection = document.getElementById('join');
+        const companiesSectionTop = companiesSection.getBoundingClientRect().top + window.pageYOffset;
         const joinSectionTop = joinSection.getBoundingClientRect().top + window.pageYOffset;
-        const viewportHeight = window.innerHeight;
         
-        if (window.scrollY > 300 && 
-            (window.scrollY < joinSectionTop - viewportHeight || 
-             window.scrollY > joinSectionTop + joinSection.offsetHeight)) {
-            stickyJoinButton.classList.add('show');
+        // Check if we're above the join section
+        if (window.scrollY < joinSectionTop - 100) { // 100px buffer before the join section
+            // Show sticky join button if scrolled past 300px
+            if (window.scrollY > 300) {
+                stickyJoinButton.classList.add('show');
+            } else {
+                stickyJoinButton.classList.remove('show');
+            }
         } else {
+            // Hide sticky join button when in or past the join section (including companies section)
             stickyJoinButton.classList.remove('show');
         }
     });

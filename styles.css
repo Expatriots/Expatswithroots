@@ -167,6 +167,17 @@ body {
     background: linear-gradient(90deg, #43A047, #2E7D32);
 }
 
+.nav-cta-companies {
+    background: linear-gradient(135deg, var(--egyptian-blue), var(--egyptian-gold)) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 128, 0.2);
+}
+
+.nav-cta-companies:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 128, 0.3);
+    background: linear-gradient(135deg, #000050, #B8860B) !important;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -980,6 +991,206 @@ body {
     
     .join-message p {
         font-size: 0.95rem;
+    }
+}
+
+/* Companies Section */
+.companies {
+    padding: 5rem 0;
+    position: relative;
+    background: #f8fafc;
+    color: #1F2937;
+    overflow: hidden;
+}
+
+.companies-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 1;
+    text-align: center;
+}
+
+.companies h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1F2937;
+}
+
+.companies h2 .highlight {
+    background: linear-gradient(90deg, var(--egyptian-blue), var(--egyptian-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline;
+    position: relative;
+    z-index: 2;
+    font-weight: 700;
+}
+
+.companies p {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.companies-why-us {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem auto;
+    max-width: 900px;
+}
+
+.why-us-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-us-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.why-us-icon {
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--egyptian-blue), var(--egyptian-gold));
+    font-size: 1.5rem;
+}
+
+.why-us-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #1F2937;
+    font-weight: 600;
+}
+
+.why-us-content p {
+    color: #6B7280;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.companies-note {
+    font-size: 0.95rem;
+    color: #6B7280;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.companies .btn-primary-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1.5rem 0 1rem;
+}
+
+.companies .btn-companies {
+    background: linear-gradient(135deg, var(--egyptian-blue), var(--egyptian-gold));
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 128, 0.3);
+    min-width: 240px;
+    max-width: 280px;
+    width: 85%;
+}
+
+.companies .btn-companies:hover, .companies .btn-companies:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 128, 0.4);
+    background: linear-gradient(135deg, #000050, #B8860B);
+}
+
+.companies .btn-companies i {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .companies {
+        padding: 3rem 0;
+    }
+    
+    .companies-content {
+        padding: 0 1.5rem;
+    }
+    
+    .companies h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .companies p {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .companies-why-us {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    .why-us-item {
+        padding: 1.5rem;
+    }
+    
+    .why-us-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .why-us-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .why-us-content p {
+        font-size: 0.95rem;
+    }
+    
+    .companies .btn-primary-wrapper {
+        margin: 1.2rem 0 0.8rem;
+    }
+    
+    .companies .btn-companies {
+        width: 90%;
+        max-width: 280px;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
     }
 }
 
