@@ -232,6 +232,20 @@ body {
     z-index: 1;
 }
 
+.hero-cohort-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+}
+
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -2369,6 +2383,19 @@ section {
     text-align: center;
 }
 
+.cohort-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: #f3f4f6;
+    color: var(--brand-primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
 .how-it-works-badge {
     display: inline-block;
     padding: 0.5rem 1.5rem;
@@ -2459,6 +2486,14 @@ section {
     line-height: 1.6;
     max-width: 250px;
     margin: 0 auto;
+}
+
+.process-deadline {
+    font-size: 0.85rem;
+    color: var(--brand-primary);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
 
 .process-connector {
