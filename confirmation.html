@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Submitted - EWR Referral Connect</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../referral-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../EWR Branding/Logo Files/Favicons/Browser.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="../EWR Branding/Logo Files/svg/Color logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Referral Connect</a></li>
+                    <li><a href="../companies.html" class="nav-cta nav-cta-companies">For Companies</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="confirmation-section">
+            <div class="container">
+                <div class="confirmation-card">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1>Request Submitted Successfully!</h1>
+
+                    <!-- Default message for companies in our network -->
+                    <p class="confirmation-message" id="confirmationMessageExists">
+                        Thank you for submitting your referral request. We've received your information and will start matching you with an Egyptian expat at your target company.
+                    </p>
+
+                    <!-- Message for companies NOT in our network -->
+                    <p class="confirmation-message" id="confirmationMessageNotExists" style="display: none;">
+                        Thank you for submitting your referral request. We've received your information.
+                    </p>
+
+                    <!-- Warning for companies not in our network - shown conditionally -->
+                    <div class="confirmation-warning-box" id="companyNotFoundWarning" style="display: none;">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Note:</strong> We don't currently have anyone at <strong id="requestedCompanyName"></strong> in our network yet. We've saved your request and will notify you as soon as an expat from that company joins our community!</p>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3><i class="fas fa-list-check"></i> What Happens Next?</h3>
+                        <div class="timeline-steps">
+                            <div class="timeline-step">
+                                <div class="timeline-step-number">1</div>
+                                <div class="timeline-step-content">
+                                    <h4>We Review Your Request</h4>
+                                    <p>Our team will review your submission within 24 hours</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="timeline-step-number">2</div>
+                                <div class="timeline-step-content">
+                                    <h4>We Find a Match</h4>
+                                    <p>We'll match you with an expat working at your target company</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="timeline-step-number">3</div>
+                                <div class="timeline-step-content">
+                                    <h4>Expat Reviews Your Profile</h4>
+                                    <p>The matched expat will review your LinkedIn and decide whether to refer you</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="timeline-step-number">4</div>
+                                <div class="timeline-step-content">
+                                    <h4>You Get Notified</h4>
+                                    <p>We'll email you with the outcome and next steps within 48 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="confirmation-info-box">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Check your email!</strong> We've sent a confirmation to your email address. Make sure to check your spam folder if you don't see it.</p>
+                    </div>
+
+                    <div class="confirmation-actions">
+                        <a href="../index.html" class="btn btn-primary">
+                            <i class="fas fa-home"></i>
+                            Back to Home
+                        </a>
+                        <a href="form.html" class="btn btn-secondary">
+                            <i class="fas fa-plus"></i>
+                            Submit Another Request
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="confirmation-faq">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> How long does matching take?</h4>
+                            <p>Typically within 24-48 hours. If we can't find a match immediately, we'll let you know and save your request.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> What if no one is at my company?</h4>
+                            <p>We'll save your request and notify you when an expat from that company joins our community.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Can I submit multiple requests?</h4>
+                            <p>Yes! Feel free to submit requests for different companies or roles.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Is this service really free?</h4>
+                            <p>Yes, completely free. We're a community-driven initiative to help Egyptian expats support each other.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="social-proof">
+                    <p class="social-proof-text">Join <strong>hundreds of Egyptian expats</strong> supporting each other's career growth</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJvTwDU5c8yVKhldkOGsbe_ukoolw7G2l-eWMrkjACRoy96g/viewform?usp=header" target="_blank" class="link-with-icon">
+                        Want to help others get referrals? Join as a referrer
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="../EWR Branding/Logo Files/svg/White logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:info@expatswithroots.com">
+                        <i class="fas fa-envelope"></i>
+                        info@expatswithroots.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Expats with Roots. Connecting Egyptian expats to build Egypt's future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Check if company was not in our list and show warning
+        document.addEventListener('DOMContentLoaded', function() {
+            const submissionData = localStorage.getItem('referralSubmission');
+            if (submissionData) {
+                try {
+                    const data = JSON.parse(submissionData);
+
+                    const messageExists = document.getElementById('confirmationMessageExists');
+                    const messageNotExists = document.getElementById('confirmationMessageNotExists');
+                    const warningBox = document.getElementById('companyNotFoundWarning');
+                    const companyNameEl = document.getElementById('requestedCompanyName');
+
+                    // Check if it's not an existing company
+                    if (data.isExistingCompany === false) {
+                        // Show "not in network" message
+                        if (messageExists) messageExists.style.display = 'none';
+                        if (messageNotExists) messageNotExists.style.display = 'block';
+
+                        // Show warning box
+                        if (warningBox && companyNameEl) {
+                            companyNameEl.textContent = data.company;
+                            warningBox.style.display = 'flex';
+                        }
+                    } else {
+                        // Show "matching" message (default)
+                        if (messageExists) messageExists.style.display = 'block';
+                        if (messageNotExists) messageNotExists.style.display = 'none';
+                    }
+                } catch (e) {
+                    console.error('Error parsing submission data:', e);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

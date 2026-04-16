@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Referral - EWR Referral Connect</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../referral-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../EWR Branding/Logo Files/Favicons/Browser.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="../EWR Branding/Logo Files/svg/Color logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Referral Connect</a></li>
+                    <li><a href="../companies.html" class="nav-cta nav-cta-companies">For Companies</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <div class="form-header">
+                    <h1>Request a <span class="highlight">Referral</span></h1>
+                    <p>Fill out the form below and we'll match you with an Egyptian expat who can refer you at your target company.</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="referralForm" class="referral-form">
+                        <!-- Personal Information -->
+                        <div class="form-section-title">
+                            <i class="fas fa-user"></i>
+                            <h3>Your Information</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedinProfile">Your LinkedIn Profile URL <span class="required">*</span></label>
+                            <input type="url" id="linkedinProfile" name="linkedinProfile" required placeholder="https://linkedin.com/in/your-profile">
+                            <small class="form-hint">The referrer will review your profile to make their decision</small>
+                        </div>
+
+                        <!-- Job Information -->
+                        <div class="form-section-title">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Job Details</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobUrl">Job Posting URL <span class="required">*</span></label>
+                            <input type="url" id="jobUrl" name="jobUrl" required placeholder="https://linkedin.com/jobs/view/... or company website">
+                            <small class="form-hint">Link to the job posting on LinkedIn or the company's website</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companySearch">Company <span class="required">*</span></label>
+                            <div class="autocomplete-wrapper">
+                                <input
+                                    type="text"
+                                    id="companySearch"
+                                    name="companySearch"
+                                    placeholder="Start typing to search companies..."
+                                    autocomplete="off"
+                                    required
+                                >
+                                <input type="hidden" id="companySelect" name="companySelect">
+                                <input type="hidden" id="isExistingCompany" name="isExistingCompany" value="false">
+                                <div id="autocompleteList" class="autocomplete-list"></div>
+                            </div>
+                            <small class="form-hint">Start typing to search. If your company isn't listed, type the full name.</small>
+                        </div>
+
+                        <!-- Optional Message -->
+                        <div class="form-section-title">
+                            <i class="fas fa-comment"></i>
+                            <h3>Additional Information (Optional)</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message to Referrer</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Briefly introduce yourself or explain why you're interested in this role (optional)"></textarea>
+                            <small class="form-hint">This helps the referrer understand your background and motivation</small>
+                        </div>
+
+                        <!-- Consent -->
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span>I agree to share my information with matched referrers and understand that EWR admins will have visibility on communications for tracking purposes. <span class="required">*</span></span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Referral Request
+                            </button>
+                        </div>
+
+                        <p class="privacy-note">
+                            <i class="fas fa-lock"></i>
+                            Your information is secure and will only be shared with matched referrers within our community
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Quick Response</h4>
+                        <p>We'll match you with a referrer within 48 hours</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Free Service</h4>
+                        <p>No cost, no hidden fees - community-driven</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Real Connections</h4>
+                        <p>Connect with real Egyptian expats who want to help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Referrers CTA -->
+        <section class="referrer-cta">
+            <div class="container">
+                <div class="referrer-cta-content">
+                    <div class="referrer-cta-text">
+                        <h2>Are You an Expat Who Can Refer?</h2>
+                        <p>Join our community and help fellow Egyptians land their dream jobs while earning referral bonuses from your company.</p>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJvTwDU5c8yVKhldkOGsbe_ukoolw7G2l-eWMrkjACRoy96g/viewform?usp=header" target="_blank" class="btn btn-secondary btn-large">
+                        <i class="fas fa-user-plus"></i>
+                        Join as Referrer
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="../EWR Branding/Logo Files/svg/White logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:info@expatswithroots.com">
+                        <i class="fas fa-envelope"></i>
+                        info@expatswithroots.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Expats with Roots. Connecting Egyptian expats to build Egypt's future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../referral-form.js"></script>
+</body>
+</html>

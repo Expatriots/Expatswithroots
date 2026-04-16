@@ -1,0 +1,790 @@
+/* Referral Connect Styles */
+
+/* Hero Section */
+.referral-hero {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-blue-medium) 100%);
+    color: white;
+    padding: 120px 20px 80px;
+    text-align: center;
+}
+
+/* Override button styles for referral hero section */
+.referral-hero .btn-primary {
+    background: white;
+    color: var(--brand-primary);
+    border: 2px solid white;
+}
+
+.referral-hero .btn-primary:hover {
+    background: var(--brand-blue-light);
+    color: white;
+    border-color: var(--brand-blue-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.referral-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.referral-hero-content h1 .highlight {
+    color: white;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: white;
+    background-clip: unset;
+}
+
+.referral-hero-content .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+.referral-hero-visual {
+    margin-top: 60px;
+}
+
+.referral-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.referral-step-icon {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.referral-step-icon:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.referral-step-icon i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.referral-step-icon span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--brand-primary);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 128, 0.15);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--brand-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 0, 128, 0.3);
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--brand-primary);
+    margin: 20px 0;
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--brand-primary);
+}
+
+.step-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Why EWR Section */
+.why-ewr {
+    padding: 80px 20px;
+    background: white;
+}
+
+.why-ewr h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--brand-primary);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    padding: 30px;
+    border: 2px solid #e6e6e6;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    border-color: var(--brand-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 128, 0.1);
+    transform: translateY(-5px);
+}
+
+.benefit-card i {
+    font-size: 3rem;
+    color: var(--brand-primary);
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--brand-primary);
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Referrer CTA */
+.referrer-cta {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e6e6e6 100%);
+}
+
+.referrer-cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.referrer-cta-text h2 {
+    font-size: 2rem;
+    color: var(--brand-primary);
+    margin-bottom: 15px;
+}
+
+.referrer-cta-text p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Referral CTA Section */
+.referral-cta {
+    padding: 80px 20px;
+    background: var(--brand-primary);
+    color: white;
+}
+
+.referral-cta-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.referral-cta-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.referral-cta-box > p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* Override button styles for referral CTA section */
+.referral-cta .btn-primary {
+    background: white;
+    color: var(--brand-primary);
+    border: 2px solid white;
+}
+
+.referral-cta .btn-primary:hover {
+    background: var(--brand-blue-light);
+    color: white;
+    border-color: var(--brand-blue-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Form Section */
+.form-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.form-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.form-header h1 {
+    font-size: 2.5rem;
+    color: var(--brand-primary);
+    margin-bottom: 15px;
+}
+
+.form-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.referral-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--brand-primary);
+}
+
+.form-section-title:first-child {
+    margin-top: 0;
+}
+
+.form-section-title i {
+    font-size: 1.5rem;
+    color: var(--brand-primary);
+}
+
+.form-section-title h3 {
+    font-size: 1.5rem;
+    color: var(--brand-primary);
+    margin: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.required {
+    color: #dc143c;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid #e6e6e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.1);
+}
+
+.form-hint {
+    font-size: 0.9rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-hint i {
+    color: var(--brand-primary);
+}
+
+.checkbox-group {
+    margin: 20px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-actions {
+    margin-top: 30px;
+}
+
+.form-actions button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    border: none;
+}
+
+.form-actions + .privacy-note {
+    color: #666;
+    margin-top: 20px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: var(--brand-primary);
+    margin-bottom: 15px;
+}
+
+.info-card h4 {
+    font-size: 1.3rem;
+    color: var(--brand-primary);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #666;
+}
+
+/* Confirmation Page */
+.confirmation-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.confirmation-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 60px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.confirmation-icon {
+    font-size: 5rem;
+    color: #28a745;
+    margin-bottom: 30px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.confirmation-card h1 {
+    font-size: 2.5rem;
+    color: var(--brand-primary);
+    margin-bottom: 20px;
+}
+
+.confirmation-message {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.next-steps {
+    text-align: left;
+    margin: 50px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.next-steps h3 {
+    font-size: 1.5rem;
+    color: var(--brand-primary);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.timeline-step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--brand-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.timeline-step-content h4 {
+    font-size: 1.2rem;
+    color: var(--brand-primary);
+    margin-bottom: 5px;
+}
+
+.timeline-step-content p {
+    color: #666;
+}
+
+.confirmation-info-box {
+    background: #e3f2fd;
+    border-left: 4px solid var(--brand-primary);
+    padding: 20px;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.confirmation-info-box i {
+    font-size: 2rem;
+    color: var(--brand-primary);
+}
+
+.confirmation-warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffa500;
+    padding: 20px;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.confirmation-warning-box i {
+    font-size: 2rem;
+    color: #ffa500;
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.confirmation-faq {
+    max-width: 900px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+.confirmation-faq h3 {
+    font-size: 2rem;
+    color: var(--brand-primary);
+    margin-bottom: 40px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.faq-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item h4 {
+    font-size: 1.1rem;
+    color: var(--brand-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.social-proof {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.social-proof-text {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.link-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.link-with-icon:hover {
+    gap: 15px;
+}
+
+/* Autocomplete Styles */
+.autocomplete-wrapper {
+    position: relative;
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid var(--brand-primary);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+.autocomplete-list.active {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background: #f8f9fa;
+}
+
+.autocomplete-item.selected {
+    background: var(--brand-primary);
+    color: white;
+}
+
+.autocomplete-item.other-option {
+    background: #f0f0f0;
+    font-weight: 600;
+    color: var(--brand-primary);
+    border-top: 2px solid #ddd;
+}
+
+.autocomplete-item.other-option:hover {
+    background: #e6e6e6;
+}
+
+.autocomplete-item i {
+    margin-right: 8px;
+}
+
+.company-match-highlight {
+    font-weight: 700;
+    color: var(--brand-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .referral-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .referral-hero-content .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .referral-icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .how-it-works h2,
+    .why-ewr h2 {
+        font-size: 2rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .referrer-cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .confirmation-card {
+        padding: 40px 25px;
+    }
+
+    .confirmation-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
+
+    .confirmation-actions .btn {
+        width: 100%;
+    }
+}
