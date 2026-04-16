@@ -345,6 +345,10 @@ body {
 .btn-large {
     padding: 1.25rem 3rem;
     font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .hero-visual {
