@@ -736,6 +736,47 @@
     color: var(--brand-primary);
 }
 
+/* Company Warning */
+.company-warning {
+    background: #fff3cd;
+    border-left: 4px solid #ffa500;
+    padding: 15px 20px;
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 8px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.company-warning i {
+    color: #ffa500;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.company-warning strong {
+    color: #856404;
+}
+
+.company-warning {
+    color: #856404;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .referral-hero-content h1 {
