@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
 
             // Google Apps Script Web App URL
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKDJc-9Ma_tub_zshkNqLL7TxFoOjdy0bUJ4ENFkP_ETlNdVxngRUPXCw46X7weit7NA/exec';
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwXHHwnx_TdJ4y1YUUDvMHZWW7fjA2Bh92RR4z8mlwVj9j8e4ORLwGenorVWlWPBVOIcg/exec';
 
             // Send data to Google Sheets
             if (GOOGLE_SCRIPT_URL !== 'REPLACE_WITH_YOUR_GOOGLE_SCRIPT_URL') {
