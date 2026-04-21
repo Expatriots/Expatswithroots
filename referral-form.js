@@ -271,37 +271,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-D3a_lkkvn9QjqObHs7TxZwcY5IwrAyvCpotTIF2bLqk6bfwv2VNe8bxVg05LrbmBfw/exec';
 
             // Send data to Google Sheets
-            if (GOOGLE_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycby-D3a_lkkvn9QjqObHs7TxZwcY5IwrAyvCpotTIF2bLqk6bfwv2VNe8bxVg05LrbmBfw/exec') {
-                fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                })
-                .then(() => {
-                    console.log('Data sent to Google Sheets');
-                    // Store in localStorage for confirmation page
-                    localStorage.setItem('referralSubmission', JSON.stringify(formData));
-                    // Redirect to confirmation page
-                    window.location.href = 'confirmation.html';
-                })
-                .catch((error) => {
-                    console.error('Error sending to Google Sheets:', error);
-                    // Still redirect even if there's an error
-                    alert('Your request was submitted but there was an error saving to our database. We will contact you at the email provided.');
-                    localStorage.setItem('referralSubmission', JSON.stringify(formData));
-                    window.location.href = 'confirmation.html';
-                });
-            } else {
-                // No Google Script URL configured - just store locally and redirect
-                console.warn('Google Sheets integration not configured. See GOOGLE_SHEETS_SETUP.md');
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                console.log('Data sent to Google Sheets');
+                // Store in localStorage for confirmation page
                 localStorage.setItem('referralSubmission', JSON.stringify(formData));
-                setTimeout(() => {
-                    window.location.href = 'confirmation.html';
-                }, 1500);
-            }
+                // Redirect to confirmation page
+                window.location.href = 'confirmation.html';
+            })
+            .catch((error) => {
+                console.error('Error sending to Google Sheets:', error);
+                // Still redirect even if there's an error
+                alert('Your request was submitted but there was an error saving to our database. We will contact you at the email provided.');
+                localStorage.setItem('referralSubmission', JSON.stringify(formData));
+                window.location.href = 'confirmation.html';
+            });
         });
     }
 
