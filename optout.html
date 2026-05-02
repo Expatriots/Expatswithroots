@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Opt Out - EWR</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -20,26 +20,34 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
         }
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #dc143c;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 20px 0;
+            background: #dc143c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .btn:hover {
+            background: #b8112e;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="spinner"></div>
-        <p>Processing your opt-out request...</p>
+        <h2>🚫 Opt Out of Referral Requests</h2>
+        <p>Click the button below to confirm you want to stop receiving referral requests from EWR.</p>
+        <a href="#" id="optoutLink" class="btn">Confirm Opt-Out</a>
+        <p style="font-size: 13px; margin-top: 20px;">You can rejoin anytime through our referrer form.</p>
     </div>
 
     <script>
@@ -53,8 +61,8 @@
         // Build redirect URL
         const redirectUrl = `${scriptUrl}?action=optout&expatId=${expatId}`;
 
-        // Redirect immediately
-        window.location.href = redirectUrl;
+        // Set the button link
+        document.getElementById('optoutLink').href = redirectUrl;
     </script>
 </body>
 </html>
