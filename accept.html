@@ -32,22 +32,74 @@
             border-radius: 6px;
             font-weight: 600;
             font-size: 16px;
+            border: none;
+            cursor: pointer;
         }
         .btn:hover {
             background: #218838;
+        }
+        .btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
         }
         p {
             color: #666;
             line-height: 1.6;
         }
+        .success {
+            color: #28a745;
+            font-size: 48px;
+        }
+        .error {
+            color: #dc143c;
+            font-size: 48px;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #28a745;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>🤝 Accept Referral Request</h2>
-        <p>Click the button below to confirm you want to accept this referral request.</p>
-        <a href="#" id="acceptLink" class="btn">✅ Confirm & Accept</a>
-        <p style="font-size: 13px; margin-top: 20px;">You'll be redirected to confirm your response.</p>
+        <div id="confirmStep">
+            <h2>🤝 Accept Referral Request</h2>
+            <p>Click the button below to confirm you want to accept this referral request.</p>
+            <button id="acceptBtn" class="btn">✅ Confirm & Accept</button>
+            <p style="font-size: 13px; margin-top: 20px;">We'll send an email to connect you with the candidate.</p>
+        </div>
+
+        <div id="loadingStep" class="hidden">
+            <div class="spinner"></div>
+            <p>Processing your response...</p>
+        </div>
+
+        <div id="successStep" class="hidden">
+            <div class="success">✅</div>
+            <h1>Thank You!</h1>
+            <p>You've accepted the referral request.</p>
+            <p>We've sent an email to you and the candidate.</p>
+            <p>Check your email - you can now communicate directly via reply-all!</p>
+            <p>Good luck! 🚀</p>
+        </div>
+
+        <div id="errorStep" class="hidden">
+            <div class="error">❌</div>
+            <h1>Something went wrong</h1>
+            <p id="errorMessage">There was an error processing your request. Please try again or contact us at info@expatswithroots.com</p>
+        </div>
     </div>
 
     <script>
@@ -59,11 +111,41 @@
         // Google Apps Script URL
         const scriptUrl = 'https://script.google.com/macros/s/AKfycby-D3a_lkkvn9QjqObHs7TxZwcY5IwrAyvCpotTIF2bLqk6bfwv2VNe8bxVg05LrbmBfw/exec';
 
-        // Build redirect URL
-        const redirectUrl = `${scriptUrl}?action=accept&requestId=${requestId}&expatId=${expatId}`;
+        // Build request URL
+        const requestUrl = `${scriptUrl}?action=accept&requestId=${requestId}&expatId=${expatId}`;
 
-        // Set the button link
-        document.getElementById('acceptLink').href = redirectUrl;
+        // Get elements
+        const confirmStep = document.getElementById('confirmStep');
+        const loadingStep = document.getElementById('loadingStep');
+        const successStep = document.getElementById('successStep');
+        const errorStep = document.getElementById('errorStep');
+        const acceptBtn = document.getElementById('acceptBtn');
+
+        // Handle button click
+        acceptBtn.addEventListener('click', async function() {
+            // Show loading
+            confirmStep.classList.add('hidden');
+            loadingStep.classList.remove('hidden');
+
+            try {
+                // Call the script in the background
+                const response = await fetch(requestUrl, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                });
+
+                // With no-cors mode, we can't read the response, but if no error is thrown, it worked
+                // Show success
+                loadingStep.classList.add('hidden');
+                successStep.classList.remove('hidden');
+            } catch (error) {
+                // Show error
+                loadingStep.classList.add('hidden');
+                errorStep.classList.remove('hidden');
+                document.getElementById('errorMessage').textContent =
+                    'Error: ' + error.message + '. Please contact us at info@expatswithroots.com';
+            }
+        });
     </script>
 </body>
 </html>

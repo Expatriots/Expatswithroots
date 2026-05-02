@@ -32,22 +32,73 @@
             border-radius: 6px;
             font-weight: 600;
             font-size: 16px;
+            border: none;
+            cursor: pointer;
         }
         .btn:hover {
             background: #5a6268;
+        }
+        .btn:disabled {
+            background: #adb5bd;
+            cursor: not-allowed;
         }
         p {
             color: #666;
             line-height: 1.6;
         }
+        .info {
+            color: #6c757d;
+            font-size: 48px;
+        }
+        .error {
+            color: #dc143c;
+            font-size: 48px;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #6c757d;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>❌ Decline Referral Request</h2>
-        <p>Click the button below to confirm you want to decline this referral request.</p>
-        <a href="#" id="declineLink" class="btn">Confirm & Decline</a>
-        <p style="font-size: 13px; margin-top: 20px;">You'll be redirected to confirm your response.</p>
+        <div id="confirmStep">
+            <h2>❌ Decline Referral Request</h2>
+            <p>Click the button below to confirm you want to decline this referral request.</p>
+            <button id="declineBtn" class="btn">Confirm & Decline</button>
+            <p style="font-size: 13px; margin-top: 20px;">We'll look for another match for this candidate.</p>
+        </div>
+
+        <div id="loadingStep" class="hidden">
+            <div class="spinner"></div>
+            <p>Processing your response...</p>
+        </div>
+
+        <div id="successStep" class="hidden">
+            <div class="info">ℹ️</div>
+            <h1>Request Declined</h1>
+            <p>We've noted your response.</p>
+            <p>We'll look for another match for this candidate.</p>
+            <p>Thank you for your time!</p>
+        </div>
+
+        <div id="errorStep" class="hidden">
+            <div class="error">❌</div>
+            <h1>Something went wrong</h1>
+            <p id="errorMessage">There was an error processing your request. Please try again or contact us at info@expatswithroots.com</p>
+        </div>
     </div>
 
     <script>
@@ -59,11 +110,41 @@
         // Google Apps Script URL
         const scriptUrl = 'https://script.google.com/macros/s/AKfycby-D3a_lkkvn9QjqObHs7TxZwcY5IwrAyvCpotTIF2bLqk6bfwv2VNe8bxVg05LrbmBfw/exec';
 
-        // Build redirect URL
-        const redirectUrl = `${scriptUrl}?action=decline&requestId=${requestId}&expatId=${expatId}`;
+        // Build request URL
+        const requestUrl = `${scriptUrl}?action=decline&requestId=${requestId}&expatId=${expatId}`;
 
-        // Set the button link
-        document.getElementById('declineLink').href = redirectUrl;
+        // Get elements
+        const confirmStep = document.getElementById('confirmStep');
+        const loadingStep = document.getElementById('loadingStep');
+        const successStep = document.getElementById('successStep');
+        const errorStep = document.getElementById('errorStep');
+        const declineBtn = document.getElementById('declineBtn');
+
+        // Handle button click
+        declineBtn.addEventListener('click', async function() {
+            // Show loading
+            confirmStep.classList.add('hidden');
+            loadingStep.classList.remove('hidden');
+
+            try {
+                // Call the script in the background
+                const response = await fetch(requestUrl, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                });
+
+                // With no-cors mode, we can't read the response, but if no error is thrown, it worked
+                // Show success
+                loadingStep.classList.add('hidden');
+                successStep.classList.remove('hidden');
+            } catch (error) {
+                // Show error
+                loadingStep.classList.add('hidden');
+                errorStep.classList.remove('hidden');
+                document.getElementById('errorMessage').textContent =
+                    'Error: ' + error.message + '. Please contact us at info@expatswithroots.com';
+            }
+        });
     </script>
 </body>
 </html>

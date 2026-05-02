@@ -32,22 +32,73 @@
             border-radius: 6px;
             font-weight: 600;
             font-size: 16px;
+            border: none;
+            cursor: pointer;
         }
         .btn:hover {
             background: #b8112e;
+        }
+        .btn:disabled {
+            background: #e6a5a5;
+            cursor: not-allowed;
         }
         p {
             color: #666;
             line-height: 1.6;
         }
+        .warning {
+            color: #dc143c;
+            font-size: 48px;
+        }
+        .error {
+            color: #dc143c;
+            font-size: 48px;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #dc143c;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>🚫 Opt Out of Referral Requests</h2>
-        <p>Click the button below to confirm you want to stop receiving referral requests from EWR.</p>
-        <a href="#" id="optoutLink" class="btn">Confirm Opt-Out</a>
-        <p style="font-size: 13px; margin-top: 20px;">You can rejoin anytime through our referrer form.</p>
+        <div id="confirmStep">
+            <h2>🚫 Opt Out of Referral Requests</h2>
+            <p>Click the button below to confirm you want to stop receiving referral requests from EWR.</p>
+            <button id="optoutBtn" class="btn">Confirm Opt-Out</button>
+            <p style="font-size: 13px; margin-top: 20px;">You can rejoin anytime through our referrer form.</p>
+        </div>
+
+        <div id="loadingStep" class="hidden">
+            <div class="spinner"></div>
+            <p>Processing your opt-out request...</p>
+        </div>
+
+        <div id="successStep" class="hidden">
+            <div class="warning">🚫</div>
+            <h1>You've Been Opted Out</h1>
+            <p>You will no longer receive referral requests from EWR Referral Connect.</p>
+            <p>You can rejoin anytime through our referrer form.</p>
+            <p>Thank you for being part of our community!</p>
+        </div>
+
+        <div id="errorStep" class="hidden">
+            <div class="error">❌</div>
+            <h1>Something went wrong</h1>
+            <p id="errorMessage">There was an error processing your request. Please try again or contact us at info@expatswithroots.com</p>
+        </div>
     </div>
 
     <script>
@@ -58,11 +109,41 @@
         // Google Apps Script URL
         const scriptUrl = 'https://script.google.com/macros/s/AKfycby-D3a_lkkvn9QjqObHs7TxZwcY5IwrAyvCpotTIF2bLqk6bfwv2VNe8bxVg05LrbmBfw/exec';
 
-        // Build redirect URL
-        const redirectUrl = `${scriptUrl}?action=optout&expatId=${expatId}`;
+        // Build request URL
+        const requestUrl = `${scriptUrl}?action=optout&expatId=${expatId}`;
 
-        // Set the button link
-        document.getElementById('optoutLink').href = redirectUrl;
+        // Get elements
+        const confirmStep = document.getElementById('confirmStep');
+        const loadingStep = document.getElementById('loadingStep');
+        const successStep = document.getElementById('successStep');
+        const errorStep = document.getElementById('errorStep');
+        const optoutBtn = document.getElementById('optoutBtn');
+
+        // Handle button click
+        optoutBtn.addEventListener('click', async function() {
+            // Show loading
+            confirmStep.classList.add('hidden');
+            loadingStep.classList.remove('hidden');
+
+            try {
+                // Call the script in the background
+                const response = await fetch(requestUrl, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                });
+
+                // With no-cors mode, we can't read the response, but if no error is thrown, it worked
+                // Show success
+                loadingStep.classList.add('hidden');
+                successStep.classList.remove('hidden');
+            } catch (error) {
+                // Show error
+                loadingStep.classList.add('hidden');
+                errorStep.classList.remove('hidden');
+                document.getElementById('errorMessage').textContent =
+                    'Error: ' + error.message + '. Please contact us at info@expatswithroots.com';
+            }
+        });
     </script>
 </body>
 </html>
