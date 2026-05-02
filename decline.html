@@ -74,14 +74,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="confirmStep">
-            <h2>❌ Decline Referral Request</h2>
-            <p>Click the button below to confirm you want to decline this referral request.</p>
-            <button id="declineBtn" class="btn">Confirm & Decline</button>
-            <p style="font-size: 13px; margin-top: 20px;">We'll look for another match for this candidate.</p>
-        </div>
-
-        <div id="loadingStep" class="hidden">
+        <div id="loadingStep">
             <div class="spinner"></div>
             <p>Processing your response...</p>
         </div>
@@ -114,18 +107,12 @@
         const requestUrl = `${scriptUrl}?action=decline&requestId=${requestId}&expatId=${expatId}`;
 
         // Get elements
-        const confirmStep = document.getElementById('confirmStep');
         const loadingStep = document.getElementById('loadingStep');
         const successStep = document.getElementById('successStep');
         const errorStep = document.getElementById('errorStep');
-        const declineBtn = document.getElementById('declineBtn');
 
-        // Handle button click
-        declineBtn.addEventListener('click', async function() {
-            // Show loading
-            confirmStep.classList.add('hidden');
-            loadingStep.classList.remove('hidden');
-
+        // Automatically process when page loads
+        (async function() {
             try {
                 // Call the script in the background
                 const response = await fetch(requestUrl, {
@@ -144,7 +131,7 @@
                 document.getElementById('errorMessage').textContent =
                     'Error: ' + error.message + '. Please contact us at info@expatswithroots.com';
             }
-        });
+        })();
     </script>
 </body>
 </html>

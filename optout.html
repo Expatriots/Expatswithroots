@@ -74,14 +74,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="confirmStep">
-            <h2>🚫 Opt Out of Referral Requests</h2>
-            <p>Click the button below to confirm you want to stop receiving referral requests from EWR.</p>
-            <button id="optoutBtn" class="btn">Confirm Opt-Out</button>
-            <p style="font-size: 13px; margin-top: 20px;">You can rejoin anytime through our referrer form.</p>
-        </div>
-
-        <div id="loadingStep" class="hidden">
+        <div id="loadingStep">
             <div class="spinner"></div>
             <p>Processing your opt-out request...</p>
         </div>
@@ -113,18 +106,12 @@
         const requestUrl = `${scriptUrl}?action=optout&expatId=${expatId}`;
 
         // Get elements
-        const confirmStep = document.getElementById('confirmStep');
         const loadingStep = document.getElementById('loadingStep');
         const successStep = document.getElementById('successStep');
         const errorStep = document.getElementById('errorStep');
-        const optoutBtn = document.getElementById('optoutBtn');
 
-        // Handle button click
-        optoutBtn.addEventListener('click', async function() {
-            // Show loading
-            confirmStep.classList.add('hidden');
-            loadingStep.classList.remove('hidden');
-
+        // Automatically process when page loads
+        (async function() {
             try {
                 // Call the script in the background
                 const response = await fetch(requestUrl, {
@@ -143,7 +130,7 @@
                 document.getElementById('errorMessage').textContent =
                     'Error: ' + error.message + '. Please contact us at info@expatswithroots.com';
             }
-        });
+        })();
     </script>
 </body>
 </html>
