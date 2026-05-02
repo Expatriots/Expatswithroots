@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Walaplus',
         'Web.de/1&1/United Group',
         'Wolt',
+        'X1N1',
         'Yamaha eBike Systems',
         'Yassir (YC W20)',
         'Zalando',

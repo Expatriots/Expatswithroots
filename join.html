@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Expats with Roots - Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="referral-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="EWR Branding/Logo Files/Favicons/Browser.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="EWR Branding/Logo Files/svg/Color logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="referral/index.html">Referral Connect</a></li>
+                    <li><a href="companies.html" class="nav-cta nav-cta-companies">For Companies</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <div class="form-header">
+                    <h1>Join <span class="highlight">Expats with Roots</span></h1>
+                    <p>Be part of a global network of Egyptian expats contributing to Egypt's future. Connect with fellow professionals, provide referrals, offer consulting, and help build our community.</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="referrerForm" class="referral-form">
+                        <!-- Personal Information -->
+                        <div class="form-section-title">
+                            <i class="fas fa-user"></i>
+                            <h3>Personal Information</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber">WhatsApp Mobile Number <span class="required">*</span></label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="+49 123 456789">
+                            <small class="form-hint">Include country code (e.g., +49 for Germany)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedinProfile">LinkedIn Profile URL <span class="required">*</span></label>
+                            <input type="url" id="linkedinProfile" name="linkedinProfile" required placeholder="https://linkedin.com/in/your-profile">
+                            <small class="form-hint">We'll use this to verify your profile and match you with opportunities</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="countryOfOrigin">Country of Origin <span class="required">*</span></label>
+                            <select id="countryOfOrigin" name="countryOfOrigin" required>
+                                <option value="Egypt" selected>Egypt</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="otherOriginGroup" style="display: none;">
+                            <label for="otherOrigin">Please specify your country of origin <span class="required">*</span></label>
+                            <input type="text" id="otherOrigin" name="otherOrigin" placeholder="Enter your country of origin">
+                        </div>
+
+                        <!-- Location -->
+                        <div class="form-section-title">
+                            <i class="fas fa-globe"></i>
+                            <h3>Current Location</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentCountry">Current Country <span class="required">*</span></label>
+                            <select id="currentCountry" name="currentCountry" required>
+                                <option value="">Select country...</option>
+                                <option value="Germany" selected>Germany</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="Austria">Austria</option>
+                                <option value="France">France</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="UAE">UAE</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <small class="form-hint">Where are you currently working?</small>
+                        </div>
+
+                        <div class="form-group" id="otherCurrentCountryGroup" style="display: none;">
+                            <label for="otherCurrentCountry">Please specify your current country <span class="required">*</span></label>
+                            <input type="text" id="otherCurrentCountry" name="otherCurrentCountry" placeholder="Enter your current country">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentCity">Current City <span class="required">*</span></label>
+                            <div class="autocomplete-wrapper">
+                                <input
+                                    type="text"
+                                    id="currentCity"
+                                    name="currentCity"
+                                    placeholder="Start typing city name..."
+                                    autocomplete="off"
+                                    required
+                                >
+                                <div id="cityAutocompleteList" class="autocomplete-list"></div>
+                            </div>
+                            <small class="form-hint">Type to search cities, or enter your city if not listed</small>
+                        </div>
+
+                        <!-- Professional Background -->
+                        <div class="form-section-title">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Professional Background</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="industry">Industry <span class="required">*</span></label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select industry...</option>
+                                <option value="Technology" selected>Technology</option>
+                                <option value="Finance & Banking">Finance & Banking</option>
+                                <option value="Healthcare & Pharmaceuticals">Healthcare & Pharmaceuticals</option>
+                                <option value="Consulting & Professional Services">Consulting & Professional Services</option>
+                                <option value="Manufacturing & Engineering">Manufacturing & Engineering</option>
+                                <option value="Education & Research">Education & Research</option>
+                                <option value="Marketing & Media">Marketing & Media</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="otherIndustryGroup" style="display: none;">
+                            <label for="otherIndustry">Please specify your industry <span class="required">*</span></label>
+                            <input type="text" id="otherIndustry" name="otherIndustry" placeholder="Enter your industry">
+                        </div>
+
+                        <div class="form-group" id="techDomainGroup" style="display: block;">
+                            <label for="techDomain">Tech Domain <span class="required">*</span></label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="Software Engineering">
+                                    <span>Software Engineering</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="AI & Machine Learning">
+                                    <span>AI & Machine Learning</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="Data Science & Analytics">
+                                    <span>Data Science & Analytics</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="Product Management">
+                                    <span>Product Management</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="DevOps & Cloud Engineering">
+                                    <span>DevOps & Cloud Engineering</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="Cybersecurity">
+                                    <span>Cybersecurity</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="techDomain" value="Other" id="techDomainOther">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                            <small class="form-hint">Select all that apply - you can choose multiple domains</small>
+                        </div>
+
+                        <div class="form-group" id="otherTechDomainGroup" style="display: none;">
+                            <label for="otherTechDomain">Please specify your tech domain <span class="required">*</span></label>
+                            <input type="text" id="otherTechDomain" name="otherTechDomain" placeholder="Enter your tech domain">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companySearch">Current Company <span class="required">*</span></label>
+                            <div class="autocomplete-wrapper">
+                                <input
+                                    type="text"
+                                    id="companySearch"
+                                    name="companySearch"
+                                    placeholder="Start typing to search companies..."
+                                    autocomplete="off"
+                                    required
+                                >
+                                <input type="hidden" id="companySelect" name="companySelect">
+                                <div id="autocompleteList" class="autocomplete-list"></div>
+                            </div>
+                            <small class="form-hint">The company where you currently work and can provide referrals</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title/Role <span class="required">*</span></label>
+                            <input type="text" id="jobTitle" name="jobTitle" required placeholder="e.g., Senior Software Engineer, Product Manager">
+                        </div>
+
+                        <!-- Additional Expertise -->
+                        <div class="form-section-title">
+                            <i class="fas fa-star"></i>
+                            <h3>Additional Expertise (Optional)</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additionalExpertise">Share expertise not visible on your LinkedIn</label>
+                            <textarea
+                                id="additionalExpertise"
+                                name="additionalExpertise"
+                                rows="6"
+                                maxlength="1000"
+                                placeholder="Unique challenges you've solved, side projects, open-source contributions, frameworks/technologies, consulting experience, publications, etc."
+                            ></textarea>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <small class="form-hint">This helps companies understand your full potential for consulting opportunities</small>
+                                <small id="charCounter" style="color: #999; font-size: 0.85rem;">0/1000</small>
+                            </div>
+                        </div>
+
+                        <!-- Availability & Preferences -->
+                        <div class="form-section-title">
+                            <i class="fas fa-cog"></i>
+                            <h3>Availability & Preferences</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referralCapacity">Referral Capacity <span class="required">*</span></label>
+                            <select id="referralCapacity" name="referralCapacity" required>
+                                <option value="Not available">Not available for referrals right now</option>
+                                <option value="Low">Low - 1 referral request per month</option>
+                                <option value="Moderate" selected>Moderate - 2-4 referral requests per month</option>
+                                <option value="High">High - 5+ referral requests per month</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="consultingAvailability">Consulting Availability <span class="required">*</span></label>
+                            <select id="consultingAvailability" name="consultingAvailability" required>
+                                <option value="Not available">Not available for consulting right now</option>
+                                <option value="Open to inquiries" selected>Open to inquiries - reach out with opportunities</option>
+                                <option value="Actively seeking">Actively seeking consulting projects</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Communication Channel(s) <span class="required">*</span></label>
+                            <small class="form-hint" style="display: block; margin-bottom: 12px;">Select all channels you're comfortable with</small>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="communication" value="Email" checked>
+                                    <span>Email</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="communication" value="WhatsApp">
+                                    <span>WhatsApp</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="communication" value="LinkedIn Messages">
+                                    <span>LinkedIn Messages</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Consent -->
+                        <div class="form-section-title">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Consent & Terms</h3>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span style="line-height: 1.8;">
+                                    I agree to join the Expats with Roots Network and understand that I may receive referral requests from Egyptian job seekers based on my company and expertise. I may be contacted by EWR for consulting opportunities based on my skills (EWR will contact me, not the company directly). I can accept or decline any request at my discretion and can opt out of specific services (referrals, consulting, events) at any time. My profile information (name, company, LinkedIn, expertise) may be shared with job seekers I'm matched with for referrals (only after I have accepted to refer them), and with companies seeking consultants in my domain (through EWR). EWR admins will have visibility on communications for quality assurance. Only the data mentioned above can be shared with third parties for the purposes stated. I can update my preferences or opt out completely at any time.
+                                    <span class="required">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                <span>Keep me updated about EWR events, networking opportunities, new features, and community updates</span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-user-plus"></i>
+                                Join Expats with Roots
+                            </button>
+                        </div>
+
+                        <p class="privacy-note">
+                            <i class="fas fa-lock"></i>
+                            Your information is secure and will only be shared as described in the consent agreement
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Help Fellow Egyptians</h4>
+                        <p>Connect talented job seekers with opportunities at your company</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h4>Earn Referral Bonuses</h4>
+                        <p>Get your company's referral bonus when candidates get hired</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Grow Your Network</h4>
+                        <p>Connect with Egyptian expats and expand your professional circle</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="EWR Branding/Logo Files/svg/White logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:info@expatswithroots.com">
+                        <i class="fas fa-envelope"></i>
+                        info@expatswithroots.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Expats with Roots. Connecting Egyptian expats to build Egypt's future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="referrer-form.js"></script>
+</body>
+</html>
