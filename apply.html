@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply to Spring 2026 Cohort - Expats with Roots</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="EWR Branding/Logo Files/Favicons/Browser.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="EWR Branding/Logo Files/svg/Color logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#vision">Vision</a></li>
+                    <li><a href="index.html#sectors">Sectors</a></li>
+                    <li><a href="companies.html" class="nav-cta">For Companies</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Application Form Section -->
+        <section class="application-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h1>Apply to Join <span class="highlight">Spring 2026 Cohort</span></h1>
+                        <p>Complete the application below to claim your free discovery session and accelerate your venture with global expertise.</p>
+                        <p class="cta-deadline">
+                            <i class="fas fa-clock"></i>
+                            Apply by <strong>April 15th</strong>
+                        </p>
+                    </div>
+
+                    <!-- Progress Indicator -->
+                    <div class="progress-indicator">
+                        <div class="progress-step active" data-step="1">
+                            <div class="progress-circle">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span class="progress-label">Basic Info</span>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" data-step="2">
+                            <div class="progress-circle">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <span class="progress-label">Discovery</span>
+                        </div>
+                    </div>
+
+                    <form id="application-form">
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-step active" data-step="1">
+                        <div class="form-section">
+                            <div class="form-section-title">
+                                <i class="fas fa-user"></i>
+                                <h3>Basic Information</h3>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="position">Current Position <span class="required">*</span></label>
+                                <input type="text" id="position" name="position" placeholder="e.g., CEO, Founder, CTO" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company <span class="required">*</span></label>
+                                <input type="text" id="company" name="company" placeholder="Your company name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Accelerator/Incubator Affiliation</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="acc-auc" name="accelerator" value="AUC Venture Lab">
+                                        <label for="acc-auc">AUC Venture Lab</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="acc-500" name="accelerator" value="500 Startups">
+                                        <label for="acc-500">500 Startups</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="acc-flat6" name="accelerator" value="Flat6Labs">
+                                        <label for="acc-flat6">Flat6Labs</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="acc-none" name="accelerator" value="None">
+                                        <label for="acc-none">None</label>
+                                    </div>
+                                    <div class="radio-option has-other">
+                                        <input type="radio" id="acc-other" name="accelerator" value="Other">
+                                        <label for="acc-other">Other:</label>
+                                        <div class="other-input" id="accelerator-other">
+                                            <input type="text" id="accelerator-other-text" name="accelerator_other" placeholder="Please specify">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="your.email@company.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="linkedin">LinkedIn Profile <span class="required">*</span></label>
+                                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" required>
+                                <small class="form-hint">We'll use this to verify your profile and understand your background</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="whatsapp">WhatsApp Mobile Number</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+20 1XX XXX XXXX">
+                                <small class="form-hint">Include country code for WhatsApp communication</small>
+                            </div>
+                        </div>
+
+                        <!-- Step Navigation -->
+                        <div class="step-navigation">
+                            <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">
+                                <i class="fas fa-arrow-left"></i>
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary" id="nextBtn">
+                                Next
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        </div>
+
+                        <!-- Step 2: Discovery Form -->
+                        <div class="form-step" data-step="2">
+                        <div class="form-section-divider">
+                            <h3>Section 2 of 2: Discovery Form</h3>
+                            <p>This form helps us pinpoint your company's single biggest bottleneck and ensure our consultancy is focused on a problem that yields the highest ROI for you.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label>Which of these domains represents the biggest bottleneck to your company's growth right now?</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="bottleneck-product" name="bottleneck" value="Digital product Growth">
+                                        <label for="bottleneck-product">Digital product Growth</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="bottleneck-software" name="bottleneck" value="Software Engineering & Architecture">
+                                        <label for="bottleneck-software">Software Engineering & Architecture</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="bottleneck-ai" name="bottleneck" value="AI / Machine Learning">
+                                        <label for="bottleneck-ai">AI / Machine Learning</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="challenges">Elaborate on the specific challenges or pain points are you currently facing</label>
+                                <textarea id="challenges" name="challenges" placeholder="Describe your current challenges in detail..."></textarea>
+                                <small class="form-hint">Help us understand the core issues you're facing</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="resources">What resources (people, data, budget) are already dedicated to this challenge?</label>
+                                <input type="text" id="resources" name="resources" placeholder="Describe your current resources...">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tried">What's been tried so far, and what do you feel has (or hasn't) worked?</label>
+                                <textarea id="tried" name="tried" placeholder="Share what approaches you've already attempted..."></textarea>
+                                <small class="form-hint">Understanding what you've tried helps us avoid repeating unsuccessful approaches</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="success">If this problem were solved tomorrow, what would success look like for you and your team?</label>
+                                <textarea id="success" name="success" placeholder="Describe your ideal outcome..."></textarea>
+                                <small class="form-hint">Define your success criteria to ensure alignment</small>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <label for="consent">
+                                        <span class="required">*</span> I agree that "Expats with Roots" will use my personal data (name, position, specialization, contact details, etc.) to facilitate the matchmaking and consultancy processes with relevant professionals and companies.
+                                        <div class="consent-details">
+                                            You can withdraw this consent at any time and request the deletion of my data by sending an email to Expatswithroots@gmail.com with a clear request to stop using and delete your data.
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step Navigation -->
+                        <div class="step-navigation">
+                            <button type="button" class="btn btn-secondary" id="prevBtn2">
+                                <i class="fas fa-arrow-left"></i>
+                                Previous
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Application
+                            </button>
+                        </div>
+
+                        <p class="privacy-note">
+                            <i class="fas fa-lock"></i>
+                            Your information is secure and will only be used to match you with the right experts
+                        </p>
+                        </div>
+                    </form>
+
+                    <!-- Success Screen (Hidden by default) -->
+                    <div id="success-screen" class="success-screen" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Application Submitted Successfully! 🎉</h2>
+                        <p class="success-message">
+                            Thank you for applying to join the <strong>Spring 2026 Cohort</strong>!
+                        </p>
+                        <p class="success-submessage">
+                            We've received your application and our team will review it carefully.
+                            We'll be in touch within <strong>a week</strong> to schedule your free discovery session.
+                        </p>
+
+                        <div class="success-details">
+                            <div class="success-detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Check Your Email</h4>
+                                    <p>We've sent a confirmation email with next steps and timeline</p>
+                                </div>
+                            </div>
+                            <div class="success-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <h4>Discovery Session</h4>
+                                    <p>We'll dive deep into your technical challenges at no cost</p>
+                                </div>
+                            </div>
+                            <div class="success-detail-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h4>Expert Matching</h4>
+                                    <p>We'll connect you with the perfect expert from our network</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="success-actions">
+                            <a href="index.html" class="btn btn-primary">
+                                <i class="fas fa-home"></i>
+                                Back to Home
+                            </a>
+                            <a href="companies.html" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i>
+                                Learn More About Our Services
+                            </a>
+                        </div>
+
+                        <p class="success-footer">
+                            Questions? Email us at <a href="mailto:info@expatswithroots.com">info@expatswithroots.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-search"></i>
+                        <h4>Free Discovery Session</h4>
+                        <p>We dive deep into your technical hurdles at no cost to ensure fit</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Expert Matching</h4>
+                        <p>Get matched with elite expats from Amazon, Meta, and Google</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Satisfaction Guaranteed</h4>
+                        <p>Payment only required if specific outcomes are met</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="EWR Branding/Logo Files/svg/White logo - no background.svg" alt="Expats with Roots Logo">
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:info@expatswithroots.com">
+                        <i class="fas fa-envelope"></i>
+                        info@expatswithroots.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Expats with Roots. Connecting Egyptian expats to build Egypt's future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="form-wizard.js"></script>
+    <script src="form-handler.js"></script>
+</body>
+</html>
